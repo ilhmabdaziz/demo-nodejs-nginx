@@ -6,7 +6,11 @@ const port = process.env.PORT || 3001;
 const server = http.createServer((req, res) => {
   if (req.url === "/hello") {
     res.writeHead(200, { "Content-Type": "application/json" });
-    res.end("Hello world");
+    res.end(
+      JSON.stringify({
+        data: "Hello world",
+      })
+    );
   } else {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end("OK");
